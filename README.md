@@ -31,7 +31,7 @@ This project was developed as the core component for [RhythmLens](https://github
 |----------------------|------------|
 | Val PCC (Best)       | 0.9136     |
 | Model Parameters     | 17.2M      |
-| Training Time        | ~2 hours (NVIDIA Tesla T4) |
+| Training Time        | ~1h GPU T4 x2 |
 
 ## Setup
 
@@ -58,15 +58,3 @@ python infer.py --config config.yaml
 
 Results (reconstructed CSV + 12-lead PNG plots) will appear in ./data/output/.
 The output folder is automatically cleaned before each run.
-
-## Project Structure
-├── config.yaml              # All paths, hyperparameters, masking settings
-├── train.py                 # Full training pipeline
-├── infer.py                 # Batch inference and visualization
-├── model/
-│   └── unet.py              # ECGRecoverUNetV2 architecture
-├── weights/                 # Stored checkpoints
-├── data/
-│   ├── input/               # Place your partial ECG files here
-│   └── output/              # Results (CSV + PNG)
-└── requirements.txt
