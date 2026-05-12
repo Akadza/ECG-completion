@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.ipynb_checkpoints/
+data/input/*
+!data/input/.gitkeep
+data/output/*
+!data/output/.gitkeep
+weights/*.pt
+!weights/.gitkeep
+.env
