@@ -1,4 +1,4 @@
-# ECGRecover: 12-Lead ECG Completion & Extension
+# ECG-completion: 12-Lead ECG Completion & Extension
 
 Deep learning model (1D U-Net + Cross-Lead Attention) for restoring missing ECG leads and extending partial recordings to standard 10 s / 500 Hz format.
 
@@ -36,9 +36,14 @@ This project was developed as the core component for [RhythmLens](https://github
 ## Setup
 
 ```bash
-git clone https://github.com/Akadza/ECGRecover.git
-cd ECGRecover
-pip install -r requirements.txt
+git clone https://github.com/Akadza/ECG-completion.git
+cd ECG-completion
+```
+
+### Create and activate Conda environment
+```bash
+conda env create -f environment.yml
+conda activate ecgcompletion
 ```
 
 1. Update paths.ptbxl_path in config.yaml
