@@ -1,0 +1,38 @@
+paths:
+  input_dir: "./data/input"
+  output_dir: "./data/output"
+  weights_dir: "./weights"
+  ptbxl_path: "/path/to/ptb-xl"  # Update before training
+  georgia_path: ""               # Optional
+  china_path: ""                 # Optional
+
+model:
+  n_leads: 12
+  base_channels: 64
+
+training:
+  epochs: 50
+  batch_size: 32
+  lr: 3.0e-5
+  weight_decay: 1.0e-5
+  patience: 7
+  seed: 42
+  masks: ["4x3", "4x3_rhythm", "6x2", "6x2_rhythm", "6x1", "3x1", "random_25", "random_50"]
+  mask_probs: [0.15, 0.15, 0.20, 0.15, 0.10, 0.10, 0.10, 0.05]
+
+loss:
+  mse_w: 1.0
+  pcc_w: 0.5
+  masked_w: 3.0
+  freq_w: 0.1
+  einthoven_w: 0.3
+
+processing:
+  target_fs: 500
+  target_length: 5000
+  standard_leads: ["I", "II", "III", "aVR", "aVL", "aVF", "V1", "V2", "V3", "V4", "V5", "V6"]
+
+output:
+  save_csv: true
+  save_plots: true
+  plot_dpi: 200
